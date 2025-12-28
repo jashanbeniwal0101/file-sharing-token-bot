@@ -20,7 +20,6 @@ from config import (
 )
 from helper_func import subscribed, encode, decode, get_messages, get_shortlink, get_verify_status, update_verify_status, get_exp_time
 from database.database import add_user, del_user, full_userbase, present_user, add_message_tracking, check_free_trial, get_free_trial_time_left, db_update_verify_status
-from shortzy import Shortzy
 
 logger = logging.getLogger(__name__)
 
