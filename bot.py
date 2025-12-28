@@ -7,8 +7,10 @@ from pyrogram import Client
 from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
+import asyncio
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
+from auto_delete import auto_delete_service
 import pyrogram.utils
 
 pyrogram.utils.MIN_CHAT_ID = -999999999999
@@ -27,6 +29,7 @@ class Bot(Client):
             bot_token=TG_BOT_TOKEN
         )
         self.LOGGER = LOGGER
+        self.auto_delete_service = auto_delete_service
 
     async def start(self):
         await super().start()
@@ -46,6 +49,7 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL}")
                 self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/ultroid_official for support")
                 sys.exit()
+        
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
             self.db_channel = db_channel
@@ -53,7 +57,6 @@ class Bot(Client):
             await test.delete()
         except Exception as e:
             self.LOGGER(__name__).warning(f"Error occurred: {e}")
-            self.LOGGER(__name__).warning(f"CHANNEL_ID: {CHANNEL_ID}, DB Channel ID: {db_channel.id if 'db_channel' in locals() else 'N/A'}")
             self.LOGGER(__name__).warning(f"Make sure bot is Admin in DB Channel, and Double-check the CHANNEL_ID value.")
             self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/ultroid_official for support")
             sys.exit()
@@ -65,12 +68,19 @@ class Bot(Client):
 ░╚════╝░░╚════╝░╚═════╝░╚══════╝
                                           """)
         self.username = usr_bot_me.username
-        #web-response
+        
+        # Start auto-delete service
+        await self.auto_delete_service.set_bot(self)
+        asyncio.create_task(self.auto_delete_service.start_auto_delete_service())
+        
+        # Web-response
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
         await web.TCPSite(app, bind_address, PORT).start()
 
     async def stop(self, *args):
+        self.LOGGER(__name__).info("Stopping auto-delete service...")
+        self.auto_delete_service.stop()
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
