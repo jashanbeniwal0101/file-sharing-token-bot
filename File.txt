@@ -27,65 +27,97 @@ with CLONE SYSTEM and ADVANCED ADMIN SETTINGS.
 🏠 START MESSAGE
 ────────────────────
 Text:
-ʜᴇʏ {user mention with clickable user id} 👋
+ʜᴇʏ {user mention with clickable user id} 👋,
 
-ɪ ᴀᴍ ᴀ ᴘᴇʀᴍᴇɴᴀɴᴛ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ
-ᴡɪᴛʜ ᴄʟᴏɴ
+ɪ ᴀᴍ ᴀ ᴘᴇʀᴍᴇɴᴀɴᴛ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡɪᴛʜ ᴄʟᴏɴᴇ ᴀɴᴅ ᴍᴀɴʏ ᴀᴍᴀᴢɪɴɢ ᴀᴅᴠᴀɴᴄᴇ ғᴇᴀᴛᴜʀᴇ ᴀɴᴅ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss sᴛᴏʀᴇᴅ ᴍᴇssᴀɢᴇs ʙʏ ᴜsɪɴɢ ᴀ sʜᴀʀᴇᴀʙʟᴇ ʟɪɴᴋ ɢɪᴠᴇɴ ʙʏ ᴍᴇ
+
+ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴄʟɪᴄᴋ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ.
 Buttons:
-Help | About
-Create Own Clone
-Join Channel | Join Group
+Help(go to help menu) | About(go to about menu)
+Create Own Clone(go to clone menu)
+Join Channel(go to channel) | Join Group(go to group)
 
 ────────────────────
 🖍 HELP MENU
 ────────────────────
-• Show full help text exactly like described
-• Show commands:
-  /start /id /link /batch /clone /activate /delete
-  /settings /broadcast /info
+
+ɪ ᴀᴍ ᴀ ᴘᴇʀᴍᴇɴᴀɴᴛ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ. ʏᴏᴜ ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs ғʀᴏᴍ ʏᴏᴜʀ ᴘᴜʙʟɪᴄ ᴄʜᴀɴɴᴇʟ ᴡɪᴛʜᴏᴜᴛ ɪ ᴀᴍ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇʀᴇ. ᴇɪᴛʜᴇʀ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ᴏʀ ɢʀᴏᴜᴘ ɪs ᴘʀɪᴠᴀᴛᴇ ғɪʀsᴛ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇʀᴇ. ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ sᴛᴏʀᴇ ʏᴏᴜʀ ғɪʟᴇs ʙʏ ᴜsɪɴɢ ʙᴇʟᴏᴡ ᴍᴇɴᴛɪᴏɴᴇᴅ ᴄᴏᴍᴍᴀɴᴅs ᴀɴᴅ ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇss sᴛᴏʀᴇᴅ ғɪʟᴇs ʙʏ ᴜsɪɴɢ sʜᴀʀᴇᴀʙʟᴇ ʟɪɴᴋ ɢɪᴠᴇɴ ʙʏ ᴍᴇ.
+
+📚 AVAILABLE COMMAND:
+
+➛ /start - ᴄʜᴇᴄᴋ ɪ ᴀᴍ ᴀʟɪᴠᴇ.
+➛ /info - Check Your Details ᴛᴇʟᴇɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ.
+➛ /link - ᴛᴏ sᴛᴏʀᴇ ᴀ sɪɴɢʟᴇ ᴍᴇssᴀɢᴇ ᴏʀ ғɪʟᴇ.
+➛ /batch - ᴛᴏ sᴛᴏʀᴇ ᴍᴜᴛɪᴘʟᴇ ᴍᴇssᴀɢᴇs ғʀᴏᴍ ᴀ ᴄʜᴀɴɴᴇʟ.
+➛ /clone - ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ɪᴅᴇɴᴛɪᴄᴀʟ ᴄʟᴏɴᴇ ʙᴏᴛ ᴏғ ᴍᴇ.
+➛ /activate - ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴄʟᴏɴᴇ ʙᴏᴛ.
+➛ /delete - ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴄʟᴏɴᴇ ʙᴏᴛ.
+➛ /settings - ᴄᴜsᴛᴏᴍɪᴢᴇ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ɴᴇᴇᴅ.
+➛ /broadcast - ʀᴇᴘʟʏ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ʏᴏᴜʀ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇs, ᴛᴏ ʙʀᴏᴀᴅᴄᴀsᴛ ᴛᴏ ᴜsᴇʀs  (ᴏᴡɴᴇʀ ᴏɴʟʏ).
 
 Buttons:
-Settings | About
+Settings(go to settings menu /settings OR button → same output   )| About(go to about menu)
 Back (go to Start)
 
 ────────────────────
 ℹ️ ABOUT MENU
 ────────────────────
 Show:
-• Creator name
+• Creator: name
 • Language: Python3
 • Library: Pyrogram 2.0.106 (with link)
 • Channel link
 • Support Group link
 
+This bot helps you store Telegram files permanently
+and generate shareable links with advanced clone features.
 Buttons:
-Settings | Help
-Back
+Settings(go to settings menu /settings OR button → same output ) | Help(go to help menu) 
+Back(go to Start)
 
 ────────────────────
 🤖 CLONE SYSTEM
 ────────────────────
 /clone OR button → same output
+🔧 ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ 👨‍💻
 
-• Instructions to create bot via @BotFather
-• Ask user to FORWARD BotFather token message
-• Save clone bot data in DB
-• Allow multiple clones
-• /activate → list all inactive clones → activate
-• /delete → list clones → delete one by one
+🔧 ɪғ ʏᴏᴜʀ ʙᴏᴛ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴛʜᴇɴ ᴜsᴇ /activate ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴛʜᴇ ʙᴏᴛ 🚀
 
-Success message:
-“Congratulations your @botusername clone bot is successfully created…”
+🤖 ʏᴏᴜ ᴄᴀɴ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ /delete ᴄᴏᴍᴍᴀɴᴅ ☠️
+Button:
+create clone(if clone not make)
+bot username(else user bot username)
 
+
+────────────────────
+🤖 CLONE SYSTEM Menu
+────────────────────
+1) sᴇɴᴅ /newbot ᴛᴏ @BotFather
+2) ɢɪᴠᴇ ᴀ ɴᴀᴍᴇ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.
+3) ɢɪᴠᴇ ᴀ ᴜɴɪǫᴜᴇ ᴜsᴇʀɴᴀᴍᴇ.
+4) ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴀ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ.
+5) ꜰᴏʀᴡᴀʀᴅ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ.
+
+/cancel - ᴄᴀɴᴄᴇʟ ᴛʜɪs ᴘʀᴏᴄᴇss.
+
+🎉 Cᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴs!
+
+🤖 Yᴏᴜʀ @{{bot_username}} ᴄʟᴏɴᴇ ʙᴏᴛ ʜᴀs ʙᴇᴇɴ
+✅ Sᴜᴄᴄᴇssꜰᴜʟʟʏ Cʀᴇᴀᴛᴇᴅ!
+
+🔐 Bᴏᴛ Tᴏᴋᴇɴ: Sᴀᴠᴇᴅ Sᴇᴄᴜʀᴇʟʏ  
+🚀 Yᴏᴜʀ ʙᴏᴛ ɪs ɴᴏᴡ ʀᴇᴀᴅʏ ᴛᴏ ᴜsᴇ.
+
+Tʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴜsɪɴɢ ᴏᴜʀ sᴇʀᴠɪᴄᴇ 💙
 ────────────────────
 👤 /info COMMAND
 ────────────────────
 Show:
-First name
-Last name
-User ID (click-to-copy)
-Username
-User link
+First: user first name
+Last: user last name
+User:  ID (click-to-copy)
+Username : username add
+User link: user telegram id add
 Telegram Premium (True/False)
 Language code
 Status
@@ -99,6 +131,10 @@ Send message to ALL users
 ────────────────────
 ⚙️ SETTINGS MENU
 ────────────────────
+ʜᴇʀᴇ ɪs ᴛʜᴇ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ 
+
+ᴄᴜsᴛᴏᴍɪᴢᴇ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs ᴀs ᴘᴇʀ ʏᴏᴜʀ ɴᴇᴇᴅ.
+
 Buttons:
 1. My Clone Bot
 2. Premium Plan
@@ -115,12 +151,47 @@ Buttons:
 Each button must open its OWN working submenu.
 
 ────────────────────
+My Clone Bot
+────────────────────
+/clone OR button → same output
+🔧 ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ 👨‍💻
+
+🔧 ɪғ ʏᴏᴜʀ ʙᴏᴛ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴛʜᴇɴ ᴜsᴇ /activate ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ ᴛʜᴇ ʙᴏᴛ 🚀
+
+🤖 ʏᴏᴜ ᴄᴀɴ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ /delete ᴄᴏᴍᴍᴀɴᴅ ☠️
+Button:
+create clone(if clone not make)
+bot username(else user bot username)
+
+
+────────────────────
+🤖 CLONE SYSTEM Menu
+────────────────────
+1) sᴇɴᴅ /newbot ᴛᴏ @BotFather
+2) ɢɪᴠᴇ ᴀ ɴᴀᴍᴇ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.
+3) ɢɪᴠᴇ ᴀ ᴜɴɪǫᴜᴇ ᴜsᴇʀɴᴀᴍᴇ.
+4) ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴀ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ.
+5) ꜰᴏʀᴡᴀʀᴅ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ.
+
+/cancel - ᴄᴀɴᴄᴇʟ ᴛʜɪs ᴘʀᴏᴄᴇss.
+
+🎉 Cᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴs!
+
+🤖 Yᴏᴜʀ @{{bot_username}} ᴄʟᴏɴᴇ ʙᴏᴛ ʜᴀs ʙᴇᴇɴ
+✅ Sᴜᴄᴄᴇssꜰᴜʟʟʏ Cʀᴇᴀᴛᴇᴅ!
+
+🔐 Bᴏᴛ Tᴏᴋᴇɴ: Sᴀᴠᴇᴅ Sᴇᴄᴜʀᴇʟʏ  
+🚀 Yᴏᴜʀ ʙᴏᴛ ɪs ɴᴏᴡ ʀᴇᴀᴅʏ ᴛᴏ ᴜsᴇ.
+
+Tʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴜsɪɴɢ ᴏᴜʀ sᴇʀᴠɪᴄᴇ 💙
+
+────────────────────
 💎 PREMIUM SYSTEM
 ────────────────────
-• Premium plan text (set / delete)
-• Add premium user (ID + time)
+• Premium plan text
+• Add premium user
 • Remove premium user
-• Premium user list
+• Premium user
 • Premium bypasses short links
 • Premium only works if token verification ON
 
