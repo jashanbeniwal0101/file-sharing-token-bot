@@ -1,7 +1,6 @@
 import motor.motor_asyncio
 from config import DB_URI, DB_NAME, AUTO_DELETE_HOURS
 from datetime import datetime, timedelta
-import asyncio
 
 dbclient = motor.motor_asyncio.AsyncIOMotorClient(DB_URI)
 database = dbclient[DB_NAME]
@@ -67,7 +66,7 @@ async def add_message_tracking(message_id, user_id, file_name=None, chat_id=None
     message_doc = {
         'message_id': message_id,
         'user_id': user_id,
-        'chat_id': chat_id or user_id,  # Store chat_id for deletion
+        'chat_id': chat_id or user_id,
         'file_name': file_name or "Unknown",
         'created_at': datetime.now(),
         'expires_at': expire_time,
@@ -102,7 +101,8 @@ async def get_user_messages(user_id):
 async def cleanup_old_messages():
     """Clean up messages older than 7 days"""
     week_ago = datetime.now() - timedelta(days=7)
-    await message_data.delete_many({'created_at': {'$lt': week_ago}})
+    result = await message_data.delete_many({'created_at': {'$lt': week_ago}})
+    return result.deleted_count
 
 # Free trial functions
 async def check_free_trial(user_id):
