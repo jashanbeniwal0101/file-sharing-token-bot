@@ -3,10 +3,9 @@ pyrogram==2.0.106
 TgCrypto==1.2.5
 pyromod==3.1.1
 
-# For Database
+# For Database (compatible with Python 3.8)
 pymongo==4.5.0
 motor==3.3.2
-umongo==3.2.1
 dnspython==2.4.2
 marshmallow==3.20.1
 
@@ -17,7 +16,6 @@ bs4==0.0.1
 shortzy==1.0.3
 aiohttp==3.9.1
 aiofiles==23.2.1
-asyncio==3.4.3
 
-# Additional for new features
+# For new features
 APScheduler==3.10.4
