@@ -2,12 +2,12 @@ import base64
 import re
 import asyncio
 import time
+import aiohttp
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS, FREE_TRIAL_HOURS
+from config import FORCE_SUB_CHANNEL, ADMINS, FREE_TRIAL_HOURS, SHORTLINK_URL, SHORTLINK_API
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
-from shortzy import Shortzy
 from datetime import datetime
 from database.database import user_data, db_verify_status, db_update_verify_status
 
@@ -99,9 +99,29 @@ async def update_verify_status(user_id, verify_token="", is_verified=False, veri
     await db_update_verify_status(user_id, current)
 
 async def get_shortlink(url, api, link):
-    shortzy = Shortzy(api_key=api, base_site=url)
-    link = await shortzy.convert(link)
-    return link
+    """Alternative short link generation without shortzy"""
+    try:
+        # Simple URL shortening using a basic API call
+        api_url = f"https://{url}/api"
+        params = {
+            'api': api,
+            'url': link
+        }
+        
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api_url, params=params) as response:
+                if response.status == 200:
+                    data = await response.json()
+                    if data.get('status') == 'success':
+                        return data.get('shortenedUrl')
+                    else:
+                        # Fallback: Use the original link if shortening fails
+                        return link
+                else:
+                    return link
+    except Exception as e:
+        print(f"Short link error: {e}")
+        return link  # Return original link if shortening fails
 
 def get_exp_time(seconds):
     periods = [('d', 86400), ('h', 3600), ('m', 60), ('s', 1)]
