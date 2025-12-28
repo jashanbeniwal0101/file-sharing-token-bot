@@ -1,21 +1,18 @@
-# For Bot Working
+# Bot Framework
 pyrogram==2.0.106
 TgCrypto==1.2.5
 pyromod==3.1.1
 
-# For Database (compatible with Python 3.8)
+# Database
 pymongo==4.5.0
 motor==3.3.2
 dnspython==2.4.2
-marshmallow==3.20.1
 
-# For Web Response
-pytz==2023.3
-requests==2.31.0
-bs4==0.0.1
-shortzy==1.0.3
+# Web & HTTP
 aiohttp==3.9.1
-aiofiles==23.2.1
+requests==2.31.0
 
-# For new features
+# Utilities
 APScheduler==3.10.4
+pytz==2023.3
+aiofiles==23.2.1
