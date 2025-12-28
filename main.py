@@ -13,8 +13,8 @@ async def main():
     try:
         # Cleanup old messages on startup
         logger.info("Starting cleanup of old messages...")
-        await cleanup_old_messages()
-        logger.info("Cleanup completed!")
+        deleted_count = await cleanup_old_messages()
+        logger.info(f"Cleanup completed! Deleted {deleted_count} old messages.")
         
         # Start the bot
         logger.info("Starting bot...")
