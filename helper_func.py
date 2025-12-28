@@ -1,23 +1,15 @@
-#ultroidxTeam (admin - TG )
-#import logging
-#(©)Codexbotz
-
 import base64
 import re
 import asyncio
+import time
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS
+from config import FORCE_SUB_CHANNEL, ADMINS, FREE_TRIAL_HOURS
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 from shortzy import Shortzy
-import requests
-import time
 from datetime import datetime
 from database.database import user_data, db_verify_status, db_update_verify_status
-
-#logger = logging.getLogger(__name__)
-#logger.setLevel(logging.INFO)
 
 async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
@@ -26,7 +18,7 @@ async def is_subscribed(filter, client, update):
     if user_id in ADMINS:
         return True
     try:
-        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL, user_id = user_id)
+        member = await client.get_chat_member(chat_id=FORCE_SUB_CHANNEL, user_id=user_id)
     except UserNotParticipant:
         return False
 
@@ -42,9 +34,9 @@ async def encode(string):
     return base64_string
 
 async def decode(base64_string):
-    base64_string = base64_string.strip("=") # links generated before this commit will be having = sign, hence striping them to handle padding errors.
+    base64_string = base64_string.strip("=")
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
-    string_bytes = base64.urlsafe_b64decode(base64_bytes) 
+    string_bytes = base64.urlsafe_b64decode(base64_bytes)
     string = string_bytes.decode("ascii")
     return string
 
@@ -59,7 +51,7 @@ async def get_messages(client, message_ids):
                 message_ids=temb_ids
             )
         except FloodWait as e:
-            await asyncio.sleep(e.x)
+            await asyncio.sleep(e.value)
             msgs = await client.get_messages(
                 chat_id=client.db_channel.id,
                 message_ids=temb_ids
@@ -80,7 +72,7 @@ async def get_message_id(client, message):
         return 0
     elif message.text:
         pattern = "https://t.me/(?:c/)?(.*)/(\d+)"
-        matches = re.match(pattern,message.text)
+        matches = re.match(pattern, message.text)
         if not matches:
             return 0
         channel_id = matches.group(1)
@@ -106,21 +98,19 @@ async def update_verify_status(user_id, verify_token="", is_verified=False, veri
     current['link'] = link
     await db_update_verify_status(user_id, current)
 
-
 async def get_shortlink(url, api, link):
     shortzy = Shortzy(api_key=api, base_site=url)
     link = await shortzy.convert(link)
     return link
 
 def get_exp_time(seconds):
-    periods = [('days', 86400), ('hours', 3600), ('mins', 60), ('secs', 1)]
-    result = ''
+    periods = [('d', 86400), ('h', 3600), ('m', 60), ('s', 1)]
+    result = []
     for period_name, period_seconds in periods:
         if seconds >= period_seconds:
             period_value, seconds = divmod(seconds, period_seconds)
-            result += f'{int(period_value)}{period_name}'
-    return result
-
+            result.append(f'{int(period_value)}{period_name}')
+    return ' '.join(result[:2]) if result else '0s'
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -129,7 +119,10 @@ def get_readable_time(seconds: int) -> str:
     time_suffix_list = ["s", "m", "h", "days"]
     while count < 4:
         count += 1
-        remainder, result = divmod(seconds, 60) if count < 3 else divmod(seconds, 24)
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -143,5 +136,23 @@ def get_readable_time(seconds: int) -> str:
     up_time += ":".join(time_list)
     return up_time
 
+# New helper functions for free trial
+def format_trial_time(seconds):
+    """Format seconds to human-readable trial time"""
+    if seconds <= 0:
+        return "0h 0m"
+    hours = int(seconds // 3600)
+    minutes = int((seconds % 3600) // 60)
+    return f"{hours}h {minutes}m"
+
+async def is_free_trial_active_db(user_id):
+    """Check if user has active free trial (using database)"""
+    from database.database import check_free_trial
+    return await check_free_trial(user_id)
+
+async def get_trial_time_left_db(user_id):
+    """Get remaining free trial time (using database)"""
+    from database.database import get_free_trial_time_left
+    return await get_free_trial_time_left(user_id)
 
 subscribed = filters.create(is_subscribed)
