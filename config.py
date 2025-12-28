@@ -6,14 +6,14 @@ from logging.handlers import RotatingFileHandler
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 
 # Your API ID & API HASH from my.telegram.org
-APP_ID = int(os.environ.get("APP_ID", "22505271"))
-API_HASH = os.environ.get("API_HASH", "c89a94fcfda4bc06524d0903977fc81e")
+APP_ID = int(os.environ.get("APP_ID", "25331263"))
+API_HASH = os.environ.get("API_HASH", "cab85305bf85125a2ac053210bcd1030")
 
 # Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002075726565"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1003508451850"))
 
 # OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "6695586027"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "1955406483"))
 
 # Port
 PORT = os.environ.get("PORT", "8585")
@@ -30,7 +30,7 @@ IS_VERIFY = os.environ.get("IS_VERIFY", "True") == "True"
 TUT_VID = os.environ.get("TUT_VID", "https://t.me/+PZfHvzjSiZc4OGE1")
 
 # Force sub channel id
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002108419450"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1003600438841"))
 
 # Workers
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
@@ -59,7 +59,7 @@ PROTECT_CONTENT = os.environ.get('PROTECT_CONTENT', "False") == "True"
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", "False") == "True"
 
 # Auto-delete settings
-AUTO_DELETE_HOURS = int(os.environ.get("AUTO_DELETE_HOURS", "24"))
+AUTO_DELETE_HOURS = int(os.environ.get("AUTO_DELETE_HOURS", "1"))
 AUTO_DELETE_ENABLED = os.environ.get("AUTO_DELETE_ENABLED", "True") == "True"
 
 # Free trial settings
