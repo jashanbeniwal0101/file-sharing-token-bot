@@ -3,6 +3,7 @@ import re
 import asyncio
 import time
 import aiohttp
+import json
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from config import FORCE_SUB_CHANNEL, ADMINS, FREE_TRIAL_HOURS, SHORTLINK_URL, SHORTLINK_API
@@ -99,23 +100,47 @@ async def update_verify_status(user_id, verify_token="", is_verified=False, veri
     await db_update_verify_status(user_id, current)
 
 async def get_shortlink(url, api, link):
-    """Alternative short link generation without shortzy"""
+    """Simple URL shortening function"""
     try:
-        # Simple URL shortening using a basic API call
-        api_url = f"https://{url}/api"
-        params = {
-            'api': api,
-            'url': link
-        }
+        # For popular shorteners
+        if "shareus" in url or "easysky" in url:
+            api_url = f"https://{url}/shortLink"
+            params = {
+                'token': api,
+                'format': 'json',
+                'link': link
+            }
+        elif "shorturllink" in url or "moneykamalo" in url:
+            api_url = f"https://{url}/api"
+            params = {
+                'api': api,
+                'url': link
+            }
+        else:
+            # Generic API call
+            api_url = f"https://{url}/api"
+            params = {
+                'api': api,
+                'url': link
+            }
         
         async with aiohttp.ClientSession() as session:
             async with session.get(api_url, params=params) as response:
                 if response.status == 200:
                     data = await response.json()
-                    if data.get('status') == 'success':
-                        return data.get('shortenedUrl')
+                    # Try different response formats
+                    if isinstance(data, dict):
+                        if data.get('shortenedUrl'):
+                            return data.get('shortenedUrl')
+                        elif data.get('shorturl'):
+                            return data.get('shorturl')
+                        elif data.get('url'):
+                            return data.get('url')
+                        elif data.get('link'):
+                            return data.get('link')
+                    elif isinstance(data, str):
+                        return data
                     else:
-                        # Fallback: Use the original link if shortening fails
                         return link
                 else:
                     return link
@@ -124,6 +149,9 @@ async def get_shortlink(url, api, link):
         return link  # Return original link if shortening fails
 
 def get_exp_time(seconds):
+    if seconds <= 0:
+        return "0s"
+    
     periods = [('d', 86400), ('h', 3600), ('m', 60), ('s', 1)]
     result = []
     for period_name, period_seconds in periods:
