@@ -1,0 +1,147 @@
+You are a SENIOR Python Telegram Bot Developer.
+
+I want a COMPLETE, PRODUCTION-READY Telegram PERMANENT FILE STORE BOT
+with CLONE SYSTEM and ADVANCED ADMIN SETTINGS.
+
+⚠️ IMPORTANT RULES
+- Do NOT skip ANY feature
+- Do NOT simplify logic
+- Do NOT give partial code
+- Use Pyrogram v2.0.106 + Python 3
+- Use MongoDB for database
+- Use InlineKeyboardButtons everywhere
+- Use edit_text() only (no new messages)
+- Clean modular folder structure
+- All features must be fully WORKING without errors
+- First check FORCE JOIN (channel + group) before bot access
+
+────────────────────
+🔐 FORCE JOIN SYSTEM
+────────────────────
+• When user sends /start:
+  - First check if user joined required Channel & Group
+  - If NOT joined → show Join buttons only
+  - If joined → show START MENU below
+
+────────────────────
+🏠 START MESSAGE
+────────────────────
+Text:
+ʜᴇʏ {user mention with clickable user id} 👋
+
+ɪ ᴀᴍ ᴀ ᴘᴇʀᴍᴇɴᴀɴᴛ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ
+ᴡɪᴛʜ ᴄʟᴏɴ
+Buttons:
+Help | About
+Create Own Clone
+Join Channel | Join Group
+
+────────────────────
+🖍 HELP MENU
+────────────────────
+• Show full help text exactly like described
+• Show commands:
+  /start /id /link /batch /clone /activate /delete
+  /settings /broadcast /info
+
+Buttons:
+Settings | About
+Back (go to Start)
+
+────────────────────
+ℹ️ ABOUT MENU
+────────────────────
+Show:
+• Creator name
+• Language: Python3
+• Library: Pyrogram 2.0.106 (with link)
+• Channel link
+• Support Group link
+
+Buttons:
+Settings | Help
+Back
+
+────────────────────
+🤖 CLONE SYSTEM
+────────────────────
+/clone OR button → same output
+
+• Instructions to create bot via @BotFather
+• Ask user to FORWARD BotFather token message
+• Save clone bot data in DB
+• Allow multiple clones
+• /activate → list all inactive clones → activate
+• /delete → list clones → delete one by one
+
+Success message:
+“Congratulations your @botusername clone bot is successfully created…”
+
+────────────────────
+👤 /info COMMAND
+────────────────────
+Show:
+First name
+Last name
+User ID (click-to-copy)
+Username
+User link
+Telegram Premium (True/False)
+Language code
+Status
+
+────────────────────
+📣 /broadcast
+────────────────────
+Owner only
+Send message to ALL users
+
+────────────────────
+⚙️ SETTINGS MENU
+────────────────────
+Buttons:
+1. My Clone Bot
+2. Premium Plan
+3. Link Shortener
+4. Token Verification
+5. Custom Caption
+6. Force Subscribe
+7. Custom Buttons
+8. Auto Delete
+9. Protect Content
+10. Permanent Link
+11. Back
+
+Each button must open its OWN working submenu.
+
+────────────────────
+💎 PREMIUM SYSTEM
+────────────────────
+• Premium plan text (set / delete)
+• Add premium user (ID + time)
+• Remove premium user
+• Premium user list
+• Premium bypasses short links
+• Premium only works if token verification ON
+
+────────────────────
+🔗 LINK SHORTENER
+────────────────────
+• Set short link domain
+• Delete short link
+• Turn ON/OFF
+• Store in database
+
+────────────────────
+🔐 TOKEN VERIFICATION
+────────────────────
+Sub-menus:
+• Verify shortener
+• Verify tutorial link
+• Verify time
+• Second verification
+• ON / OFF toggle
+
+All data saved in DB properly
+
+────────────────────
